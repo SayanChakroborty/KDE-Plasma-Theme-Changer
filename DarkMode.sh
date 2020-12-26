@@ -1,10 +1,8 @@
 lookandfeeltool --apply org.kde.breezedark.desktop;
 
-kquitapp5 plasmashell;
+kquitapp5 plasmashell && kstart5 plasmashell;
 
 kwin_x11 --replace &;
-
-kstart5 plasmashell;
 
 konsoleprofile colors=Breeze;
 
