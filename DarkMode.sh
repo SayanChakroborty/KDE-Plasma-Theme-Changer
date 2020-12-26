@@ -8,4 +8,4 @@ kstart5 plasmashell;
 
 konsoleprofile colors=Breeze;
 
-sed -i 's/DefaultProfile=BreezeLight.profile/DefaultProfile=BreezeDark.profile/g' ~/.config/konsolerc;
+sed -i 's/DefaultProfile=Day.profile/DefaultProfile=Night.profile/g' ~/.config/konsolerc;
