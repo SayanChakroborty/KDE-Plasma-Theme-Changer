@@ -6,6 +6,6 @@ kwin_x11 --replace &;
 
 kstart5 plasmashell;
 
-konsoleprofile colors=Breeze Light;
+konsoleprofile colors="Breeze Light";
 
-sed -i 's/DefaultProfile=BreezeDark.profile/DefaultProfile=BreezeLight.profile/g' ~/.config/konsolerc;
+sed -i 's/DefaultProfile=Night.profile/DefaultProfile=Day.profile/g' ~/.config/konsolerc;
