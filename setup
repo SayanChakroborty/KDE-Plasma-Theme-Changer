@@ -15,3 +15,7 @@ mkdir -p ~/.local/bin;
 cp ./day ~/.local/bin/;
 
 cp ./night ~/.local/bin/;
+
+cp ./Day.profile ~/.local/share/konsole/;
+
+cp ./Night.profile ~/.local/share/konsole/;
