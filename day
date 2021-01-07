@@ -12,6 +12,6 @@ kquitapp5 plasmashell && kstart5 plasmashell;
 
 sed -i '/Net\/ThemeName/c\Net\/ThemeName "Arc"' ~/.config/xsettingsd/xsettingsd.conf;
 
-xsettingsd;
+xsettingsd &
 
 fi
