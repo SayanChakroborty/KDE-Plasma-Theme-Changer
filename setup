@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mkdir -p ~/.local/share/plasma/look-and-feel;
+
+cp -r ./com.github.sayan.day ~/.local/share/plasma/look-and-feel/;
+
+cp -r ./com.github.sayan.night ~/.local/share/plasma/look-and-feel/;
