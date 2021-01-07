@@ -5,3 +5,13 @@ mkdir -p ~/.local/share/plasma/look-and-feel;
 cp -r ./com.github.sayan.day ~/.local/share/plasma/look-and-feel/;
 
 cp -r ./com.github.sayan.night ~/.local/share/plasma/look-and-feel/;
+
+chmod a+x ./day;
+
+chmod a+x ./night;
+
+mkdir -p ~/.local/bin;
+
+cp ./day ~/.local/bin/;
+
+cp ./night ~/.local/bin/;
