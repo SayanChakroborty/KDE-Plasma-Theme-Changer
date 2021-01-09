@@ -10,11 +10,15 @@ chmod a+x ./day;
 
 chmod a+x ./night;
 
+chmod a+x ./toggle;
+
 mkdir -p ~/.local/bin;
 
 cp ./day ~/.local/bin/;
 
 cp ./night ~/.local/bin/;
+
+cp ./toggle ~/.local/bin/;
 
 cp ./Day.profile ~/.local/share/konsole/;
 
