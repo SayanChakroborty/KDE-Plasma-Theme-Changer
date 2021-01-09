@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ $(date +"%H") -ge 6 ]] && [[ $(date +"%H") -lt 18 ]] && [[ $(date +"%p") -eq "AM" ]];
+if [ $(date +"%H") -ge 6 ] && [ $(date +"%H") -lt 18 ];
 
 then day;
 
