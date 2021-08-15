@@ -1,24 +1,30 @@
 #!/bin/sh
 
-#include ./theme_names
+#Change KDE Plasma Global theme
+global_light_theme=org.kde.breeze.desktop;
+global_dark_theme=org.kde.breezedark.desktop;
+
 
 #Change to desired GTK themes installed in "/usr/share/themes/"
-
 gtk_light_theme=Adwaita;
 gtk_dark_theme=Adwaita-dark;
 
 
 #Change to desired ColorSchemes installed in either "/usr/share/konsole/*.colorscheme" or "~/.local/share/konsole/*.colorscheme"
+konsole_light_colorscheme=BlackOnWhite;
+konsole_dark_colorscheme=LightOnBlack;
 
-konsole_light_colorscheme="Breeze Light";
-konsole_dark_colorscheme=Breeze;
+
+if ! grep -Eq "LookAndFeelPackage=$global_light_theme$" /home/$(whoami)/.config/kdeglobals;
+then lookandfeeltool --apply $global_light_theme;
+fi
 
 
-if grep -E "ColorScheme=$konsole_dark_colorscheme$" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
+if ! grep -Eq "ColorScheme=$konsole_light_colorscheme$" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
 then sed -i "s:.*ColorScheme.*:ColorScheme=$konsole_light_colorscheme:" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
 fi
 
 
-if grep -E "Net\/ThemeName \"$gtk_dark_theme\"$" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf;
+if ! grep -Eq "Net\/ThemeName \"$gtk_light_theme\"$" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf;
 then sed -i "s:.*Net/ThemeName.*:Net/ThemeName \"$gtk_light_theme\":" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf && xsettingsd &
 fi
