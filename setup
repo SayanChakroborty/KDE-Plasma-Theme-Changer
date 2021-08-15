@@ -1,0 +1,10 @@
+#!/bin/sh
+
+mkdir -p /home/$(whoami)/.local/share/konsole/
+
+if [ "$(grep DefaultProfile= .config/konsolerc | sed 's/^.*=//')" != "" ]
+then konsole_default_profile=$(grep DefaultProfile= .config/konsolerc | sed 's/^.*=//')
+[[ -f "/home/$(whoami)/.local/share/konsole/$konsole_default_profile" ]] && konsole_default_profile_path="/home/$(whoami)/.local/share/konsole/$konsole_default_profile"
+[[ -f "/usr/share/konsole/$konsole_default_profile" ]] && konsole_default_profile_path="/usr/share/konsole/$konsole_default_profile"
+cp "$konsole_default_profile_path" /home/$(whoami)/.local/share/konsole/
+fi
