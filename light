@@ -12,7 +12,7 @@ gtk_dark_theme=Adwaita-dark;
 
 #Change to desired ColorSchemes installed in either "/usr/share/konsole/*.colorscheme" or "~/.local/share/konsole/*.colorscheme"
 konsole_light_colorscheme=BlackOnWhite;
-konsole_dark_colorscheme=LightOnBlack;
+konsole_dark_colorscheme=WhiteOnBlack;
 
 
 if ! grep -Eq "LookAndFeelPackage=$global_light_theme$" /home/$(whoami)/.config/kdeglobals;
