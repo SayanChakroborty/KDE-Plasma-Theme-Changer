@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#include ./theme_names
+
+#Change to desired GTK themes installed in "/usr/share/themes/"
+
+gtk_light_theme=Adwaita;
+gtk_dark_theme=Adwaita-dark;
+
+
+#Change to desired ColorSchemes installed in either "/usr/share/konsole/*.colorscheme" or "~/.local/share/konsole/*.colorscheme"
+
+konsole_light_colorscheme="Breeze Light";
+konsole_dark_colorscheme=Breeze;
+
+
+if grep -E "ColorScheme=$konsole_dark_colorscheme$" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
+then sed -i "s:.*ColorScheme.*:ColorScheme=$konsole_light_colorscheme:" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
+fi
+
+
+if grep -E "Net\/ThemeName \"$gtk_dark_theme\"$" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf;
+then sed -i "s:.*Net/ThemeName.*:Net/ThemeName \"$gtk_light_theme\":" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf && xsettingsd &
+fi
