@@ -13,3 +13,5 @@ gtk_dark=Adwaita-dark;
 #Konsole ColorSchemes [/usr/share/konsole/*.colorscheme] or [~/.local/share/konsole/*.colorscheme]
 konsole_light=SolarizedLight;
 konsole_dark=Solarized;
+
+[[ -f ~/.local/share/konsole/Adaptive.profile ]] || echo -e "[Appearance]\nColorScheme=Solarized\n\n[General]\nName=Adaptive\nParent=FALLBACK/" > ~/.local/share/konsole/Adaptive.profile;
