@@ -2,9 +2,9 @@
 
 source themes;
 
-#if ! grep -Eq "LookAndFeelPackage=$global_light$" /home/$(whoami)/.config/kdeglobals;
-#then lookandfeeltool --apply $global_light;
-#fi
+if ! grep -Eq "LookAndFeelPackage=$global_light$" /home/$(whoami)/.config/kdeglobals;
+then lookandfeeltool --apply $global_light;
+fi
 
 
 if ! grep -Eq "ColorScheme=$konsole_light$" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
