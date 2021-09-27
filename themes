@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#KDE Plasma Global themes [/usr/share/plasma/look-and-feel/] or [~/.local/share/plasma/look-and-feel/]
+global_light=org.theme.light.desktop;
+global_dark=org.theme.dark.desktop;
+
+
+#GTK themes [/usr/share/themes/] or [~/.themes/]
+gtk_light=Materia-light-compact;
+gtk_dark=Materia-dark-compact;
+
+
+#Konsole ColorSchemes [/usr/share/konsole/*.colorscheme] or [~/.local/share/konsole/*.colorscheme]
+konsole_light=Materia;
+konsole_dark=MateriaDark;

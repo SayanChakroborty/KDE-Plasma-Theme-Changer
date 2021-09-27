@@ -1,0 +1,17 @@
+#!/bin/sh
+
+source themes;
+
+#if ! grep -Eq "LookAndFeelPackage=$global_dark$" /home/$(whoami)/.config/kdeglobals;
+#then lookandfeeltool --apply $global_dark;
+#fi
+
+
+if ! grep -Eq "ColorScheme=$konsole_dark$" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
+then sed -i "s:.*ColorScheme.*:ColorScheme=$konsole_dark:" /home/$(whoami)/.local/share/konsole/Adaptive.profile;
+fi
+
+
+if ! grep -Eq "Net\/ThemeName \"$gtk_dark\"$" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf;
+then sed -i "s:.*Net/ThemeName.*:Net/ThemeName \"$gtk_dark\":" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf && xsettingsd &
+fi
