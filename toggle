@@ -1,6 +1,0 @@
-#!/bin/sh
-
-if [ $(date +"%H") -ge 6 ] && [ $(date +"%H") -lt 18 ];
-then ./light;
-else ./dark;
-fi
