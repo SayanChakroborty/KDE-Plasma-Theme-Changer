@@ -1,0 +1,27 @@
+#!/bin/sh
+
+source themes
+
+#if ! grep -Eq "LookAndFeelPackage=$global_dark$" /home/$(whoami)/.config/kdeglobals
+#then lookandfeeltool --apply $global_dark
+#fi
+
+
+if ! grep -Eq "ColorScheme=$konsole_dark$" /home/$(whoami)/.local/share/konsole/Adaptive.profile
+then sed -i "s:.*ColorScheme.*:ColorScheme=$konsole_dark:" /home/$(whoami)/.local/share/konsole/Adaptive.profile
+konsoleprofile colors=$konsole_dark
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.runCommand 'konsoleprofile colors=$konsole_dark'
+fi
+
+
+DP=`loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type`
+if [[ $DP =~ "wayland" ]]
+then gtk_current=`gsettings get org.gnome.desktop.interface gtk-theme`
+gtk_current=${gtk_current//\'}
+if [[ "$gtk_current" != "$gtk_dark" ]]
+then gsettings set org.gnome.desktop.interface gtk-theme $gtk_dark
+fi
+else if ! grep -Eq "Net\/ThemeName \"$gtk_dark\"$" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf
+then sed -i "s:.*Net/ThemeName.*:Net/ThemeName \"$gtk_dark\":" /home/$(whoami)/.config/xsettingsd/xsettingsd.conf && xsettingsd &
+fi
+fi
